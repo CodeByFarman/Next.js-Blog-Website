@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Layout from "@/components/layout";
 
 export default function AddPostPage() {
     const [title, setTitle] = useState('');
@@ -36,7 +37,7 @@ export default function AddPostPage() {
       };
 
     return (
-      <>
+      <Layout>
           <h1 className="text-2xl font-bold mb-4">Add a New Post</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -81,6 +82,6 @@ export default function AddPostPage() {
             </div>
             {error && <p className="text-red-500">{error}</p>}
           </form>
-          </>
+          </Layout>
       );
 }
